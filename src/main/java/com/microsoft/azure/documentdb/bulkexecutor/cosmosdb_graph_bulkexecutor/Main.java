@@ -43,7 +43,6 @@ public class Main {
 		
 		DocumentCollection collection = client.readCollection(String.format("/dbs/%s/colls/%s", dbName, collName), null).getResource();		
 		GraphBulkExecutor.Builder graphBulkExec = GraphBulkExecutor.builder().from(client, dbName, collName, collection.getPartitionKey(),400);
-		//Test COmments
 		
 		try(GraphBulkExecutor executor = graphBulkExec.build()){
 			
